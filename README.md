@@ -1,5 +1,6 @@
 <p align="center">
-	<img src="https://telegra.ph/file/c37dcf885413c4c1f01f7.jpg" alt="4KSANZZ" width="100"/>
+	<img src="https://user-images.githubusercontent.com/103755208/221603537-dec649b0-fcdb-4755-8c84-c843ebd314e0.jpeg)
+" alt="4KSANZZ" width="100"/>
 </p>
 <p align="center">
 <a href="#"><img title="ACAXIA MD" src="https://img.shields.io/badge/XYNABOTZ MULTI DEVICE-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
