@@ -1,0 +1,4 @@
+_Hello *:pushname:*!_
+_Here is a list of commands for this bot_
+:readmore:
+:here:

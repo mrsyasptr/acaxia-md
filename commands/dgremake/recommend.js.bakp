@@ -1,0 +1,26 @@
+
+module.exports = {
+	name: "dg-invite",
+	alias: ["dginvite"],
+	desc: "Menyeret seseorang untuk masuk kedalam Darwin's Game",
+	category: "darwingame",
+	async exec(conn, m, { pushname, readMore }) {
+		if(!args[0]) m.reply("Mabok lu?")
+		if(args[0]) {
+			args[0] += "@s.whatsapp.net"
+			if(global.db.users.hasOwnProperty(args[0])) {
+				let text = `Halo ${pushname}! Kamu telah diundang untuk bermain Darwin's Game oleh ${inviter}!\nKamu hanya punya dua pilihan; Bergabung atau Banned permanen.\nJika kamu memilih untuk Bergabung, untuk informasi apapun kamu dapat menekan tombol guide!\nBaiklah, Semua tergantung pilihanmu! ^^`
+				m.pushName = "Anonymous"
+				conn.sendMessage(args[0], { text }, { quoted: m })
+			} else {
+				m.reply("Nomer yang kamu kirim bukan pengguna bot")
+			}
+		}
+	}
+}
+
+
+Wah, sepertinya kamu melanggar peraturan?
+Banned permanen atau Kehilangan 1000 limit?
+
+Banned - Limit

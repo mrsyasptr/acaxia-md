@@ -1,0 +1,5 @@
+package-lock.json
+node_modules
+database/sessions
+database/database.json
+database/game_session.json

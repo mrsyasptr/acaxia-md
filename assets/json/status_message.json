@@ -1,0 +1,13 @@
+{
+    "without": "Do you want to find something that doesn't exist?\n:readmore:\nThen, this isn't the place :^",
+    "processed": "Your request is being processed...",
+    "owner": "Sorry, this command can only be used by the Bot Owner.",
+    "admin": "Sorry, this command can only be used by the Group Admin.",
+    "botAdmin": "Sorry, this command can only be used if the Bot becomes Admin.",
+    "group": "Sorry, this command can only be used in a Group Chat.",
+    "private": "Sorry, this command can only be used in a Private Chat.",
+    "limit": "Sorry, your \"limit\" isn't enough.",
+    "token": "Sorry, your \"token\" isn't enough.",
+    "membership": "You must join membership to use this command.",
+    "certain": "Sorry, this command can only be used by certain user."
+}

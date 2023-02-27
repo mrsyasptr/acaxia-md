@@ -1,0 +1,48 @@
+import fetch from 'node-fetch'
+
+const command = {
+	name: "twitter",
+	alias: ["tw","tweet"]
+	desc: "Digunakan untuk mengunduh media dari Twitter.",
+	async exec(conn, m, {}) {
+		if(!m.args) m.reply("_Linknya mana bodo_")
+		twitter(m.args).then((res) => {
+			for (let i = 0; i < res.media.length; i++) {
+				let caption = x === 0 ? res.caption.replace(/https:\/\/t.co\/[a-zA-Z0-9]+/gi, '').trim() : ''
+				conn.sendFile(m.chat, res.media[i].url, '', caption, m)
+			}
+		})
+	}
+}
+
+export default command
+
+async function twitterDl(url) {
+	let id = /twitter\.com\/[^/]+\/status\/(\d+)/.exec(url)[1]
+	if (!id) throw 'Invalid URL'
+	let res = await fetch(`https://tweetpik.com/api/tweets/${id}`)
+	if (res.status !== 200) throw res.statusText
+	let json = await res.json()
+	if (json.media) {
+		let media = []
+		for (let i of json.media) {
+			if (/video|animated_gif/.test(i.type)) {
+				let vid = await (await fetch(`https://tweetpik.com/api/tweets/${id}/video`)).json()
+				vid = vid.variants.pop()
+				media.push({
+					url: vid.url,
+					type: i.type
+				})
+			} else {
+				media.push({
+					url: i.url,
+					type: i.type
+				})
+			}
+		}
+		return {
+			caption: json.text,
+			media 
+		}
+	} else throw 'No media found'
+}
